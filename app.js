@@ -5,7 +5,7 @@ const slider_img = document.createElement("img");
 let i = 0;
 let images = [];
 
-//* ilk YOl sadece ilk sekil yuklenmir
+//* ilk YOl sadece ilk sekil gec yuklenir
 // fetch("https://fakestoreapi.com/products?limit=10")
 //   .then((res) => res.json())
 //   .then((data) => {
