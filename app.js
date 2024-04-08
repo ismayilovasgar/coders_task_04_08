@@ -3,27 +3,32 @@ const prev__btn = document.getElementById("prev__btn");
 const img_box = document.getElementById("img_box");
 const slider_img = document.createElement("img");
 let i = 0;
+let j = 0; // ilk sekilin yuklenmesi ucun yoxlama edir
 let images = [];
 
 // * ilk YOl sadece ilk sekil gec yuklenir
-fetch("https://fakestoreapi.com/products?limit=10")
+fetch("https://fakestoreapi.com/products?limit=20")
   .then((res) => res.json())
   .then((data) => {
     data.map((el) => {
+      if (j == 0) slider_img.src = el.image;
+      ++j;
       images.push(`${el.image}`);
     });
   });
 slider_img.classList.add("slider-img");
-slider_img.src = images[0];
 img_box.append(slider_img);
 
+// 2-ci yol
 // const request = async () => {
 //   const response = await fetch("https://fakestoreapi.com/products?limit=20");
 //   const data = await response.json();
 //   await data.map((el) => {
 //     images.push(`${el.image}`);
 //   });
-
+//   slider_img.classList.add("slider-img");
+//   slider_img.src = images[0];
+//   img_box.append(slider_img);
 // };
 // request();
 
@@ -40,6 +45,5 @@ next__btn.addEventListener("click", () => {
 });
 
 function setImg() {
-  slider_img.setAttribute("src", images[i]);
-  return "update";
+  return slider_img.setAttribute("src", images[i]);
 }
