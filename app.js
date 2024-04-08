@@ -7,7 +7,7 @@ let j = 0; // ilk sekilin yuklenmesi ucun yoxlama edir
 let images = [];
 
 //* 1-ci Yol
-fetch("https://fakestoreapi.com/products?limit=20")
+fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((data) => {
     data.map((el) => {
@@ -23,7 +23,7 @@ img_box.append(slider_img);
 
 //*  2-ci yol
 // const request = async () => {
-//   const response = await fetch("https://fakestoreapi.com/products?limit=20");
+//   const response = await fetch("https://fakestoreapi.com/products");
 //   const data = await response.json();
 //   await data.map((el) => {
 //     images.push(`${el.image}`);
