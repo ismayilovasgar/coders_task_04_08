@@ -6,7 +6,7 @@ let i = 0;
 let j = 0; // ilk sekilin yuklenmesi ucun yoxlama edir
 let images = [];
 
-// * ilk YOl sadece ilk sekil gec yuklenir
+//* 1-ci Yol
 fetch("https://fakestoreapi.com/products?limit=20")
   .then((res) => res.json())
   .then((data) => {
@@ -21,7 +21,7 @@ fetch("https://fakestoreapi.com/products?limit=20")
 slider_img.classList.add("slider-img");
 img_box.append(slider_img);
 
-// 2-ci yol
+//*  2-ci yol
 // const request = async () => {
 //   const response = await fetch("https://fakestoreapi.com/products?limit=20");
 //   const data = await response.json();
