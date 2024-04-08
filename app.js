@@ -11,8 +11,10 @@ fetch("https://fakestoreapi.com/products?limit=20")
   .then((res) => res.json())
   .then((data) => {
     data.map((el) => {
-      if (j == 0) slider_img.src = el.image;
-      ++j;
+      if (j == 0) {
+        slider_img.src = el.image;
+        ++j;
+      }
       images.push(`${el.image}`);
     });
   });
